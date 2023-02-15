@@ -10,7 +10,7 @@ const login = async (targetUrl) => {
 
     const options = {
       authorizationParams: {
-        redirect_uri: window.location.origin
+        redirect_uri: 'https://by.prodigious.com/razorfish/login/'
       }
     };
 
@@ -32,7 +32,7 @@ const logout = async () => {
     console.log("Logging out");
     await auth0Client.logout({
       logoutParams: {
-        returnTo: window.location.origin
+        returnTo: 'https://by.prodigious.com/razorfish/login/'
       }
     });
   } catch (err) {
@@ -43,7 +43,7 @@ const logout = async () => {
 /**
  * Retrieves the auth configuration from the server
  */
-const fetchAuthConfig = () => fetch("/auth_config.json");
+const fetchAuthConfig = () => fetch("https://by.prodigious.com/razorfish/login/auth_config.json");
 
 /**
  * Initializes the Auth0 client
